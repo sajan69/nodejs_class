@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="bold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex iure repudiandae laudantium accusamus eligendi optio nemo tenetur eaque quia nostrum quo laboriosam ullam, officiis neque quam, tempore a necessitatibus inventore vel accusantium error vitae. Ab quisquam debitis soluta quod aspernatur. Ipsa labore corporis voluptatem aspernatur? Dolorum magni blanditiis nam necessitatibus.</h1>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <script>
+        isBlackWhiteTheme = false;
+
+        const weatherP = document.querySelector('body');
+        const button = document.querySelector('button');
+        
+        function toggleTheme() {
+            if (isBlackWhiteTheme) {
+                
+                weatherP.style.backgroundColor = 'white';
+                weatherP.style.color = 'black';
+                isBlackWhiteTheme = false;
+            } else {
+                
+                weatherP.style.backgroundColor = 'black';
+                weatherP.style.color = 'white';
+                isBlackWhiteTheme = true;
+            }
+
+        }
+        const body = document.body; 
+
+const h1 = document.querySelector('h1');
+body.addEventListener('mouseover', () => {
+    h1.classList.add('hidden');
+});
+
+body.addEventListener('mouseout', () =>{
+    h1.classList.remove('hidden');
+});
+    </script>
+</body>
+</html>

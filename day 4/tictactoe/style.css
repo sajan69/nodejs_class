@@ -1,12 +1,18 @@
-main{
-    width: 100vw;
-    height: 100vh;
+main {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 
+    align-items: center;
+    height: 100vh;
+    
 }
 
+/* Style the heading */
+.status {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 .gameboard{
     display: grid;
     grid-template-columns: repeat(3,1fr);

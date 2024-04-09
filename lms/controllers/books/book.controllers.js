@@ -1,8 +1,10 @@
 const httpStatus = require('http-status');    
 const getBooks = async (req, res) => {
-    req.json({
-        message: "This are the available books."
-    })
+   
+    res.status(httpStatus.OK).json({
+        message: "List of all books",
+        books,
+    });
 }
 
 const createBook = async (req, res) => {   
@@ -15,5 +17,5 @@ const createBook = async (req, res) => {
 
 module.exports = {
     getBooks,
-    createBook
+    createBook,
 }

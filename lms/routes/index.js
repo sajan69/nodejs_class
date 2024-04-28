@@ -1,17 +1,20 @@
 const express = require('express');
-const httpStatus = require('http-status');
+const bookRouter = require('./book.route');
 
-const booksController = require('../controllers/books/book.controllers');
-const validate = require('../middlewares/validate');
 const router = express.Router();
 
-router.route('/books')
-    .get((req,res, next)=>{
-        console.log("This is from middleware");
-        next("Hello");
+const routes =[
+    {
+        endpoint: '/books',
+        route : bookRouter,
+
     },
-    booksController.getBooks
-)
-    .post(validate(booksController.createBook), booksController.createBook);
+];
+
+routes.forEach((route) => {
+    
+    router.use(route.endpoint, route.route);
+}
+);
 
 module.exports = router;

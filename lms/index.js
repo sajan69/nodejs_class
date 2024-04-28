@@ -1,30 +1,11 @@
-const express = require('express');
-const httpStatus = require('http-status');
-const app = express();
+const mongoose = require('mongoose');
+const app = require('./app');
+const PORT = 3000;
+let server;
 
-
-const routes = require('./routes');
-
-app.use(express.json());
-app.use('/api', routes);
-app.use((err,req,res,next)=>{
-  console.log(err);
-  res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
-    message: "Something went wrong."
-  })
-
-})
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+mongoose.connect('mongodb://localhost:27017/soch_lms_db',{}).then(() => {
+  console.log('Connected to MongoDB');
+  server= app.listen(PORT,()=>{
+    console.log(`Server is running on Port ${PORT}`);
+  });
 });
-// const http = require('http');
-
-// const server = http.createServer((res, req) => {
-//   req.writeHead(200, {'Content-Type': 'text/html'});
-//   req.write('<h1>Hello World</h1>');
-//   req.end();
-// });
-
-// server.listen(5000, () => {
-//   console.log('Server is running on port 5000');
-// })

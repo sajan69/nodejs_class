@@ -1,12 +1,13 @@
-GET http://localhost:5000/api/books
+GET http://localhost:3000/api/books
 
 ###
 
-POST http://localhost:5000/api/books
+POST http://localhost:3000/api/books
 Content-Type: application/json
 
 {
-    "title": "The Lord of the Rings",
+    "title": "The Lord of the Rings: Return of the King",
     "author": "J.R.R. Tolkien",
-    "year": 1954
+    "year": 954,
+    "edition": 2
 }

@@ -35,17 +35,19 @@ Content-Type: application/json
 
 {
     "username": "sajan",
-    "email": "sajan1@gmail.com",
+    "email": "sajan23@gmail.com",
     "password": "Sajan@123"
 }
 
+
+
+
 ###Post
 POST http://localhost:3000/api/auth/login
-
 Content-Type: application/json
 
 {
-    "email": "m",
+    "email": "sajan23@gmail.com",
     "password": "Sajan@123"
 }
 

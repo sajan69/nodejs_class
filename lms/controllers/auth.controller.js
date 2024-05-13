@@ -1,5 +1,6 @@
 const httpStatus = require('http-status');
 const UserModel = require('../models/user.model');
+const { generateAuthToken } = require('./token.controller');
 
 
 const register = async(req,res) => {
@@ -15,16 +16,15 @@ const register = async(req,res) => {
 const login = async(req,res) => {
     try{
         const {email,password} = req.body;
-        const user = await UserModel.findOne({
-            email,
-        });
+        const user = await UserModel.findOne({ email });
         if (!user){
-            return res.status(httpStatus.NOT_FOUND).send('User not found');
+            return res.status(httpStatus.BAD_REQUEST).send('User not found');
         }
-        const isMatch = await user.comparePassword(password);
-        if (!isMatch){
+        
+        if (!(await user.comparePassword(password))){
             return res.status(httpStatus.UNAUTHORIZED).send('Invalid password');
         }
+        const token = generateAuthToken(user);
         const userJson = user.toJSON();
         res.status(httpStatus.OK).send(userJson);
     }

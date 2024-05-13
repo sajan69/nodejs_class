@@ -11,3 +11,52 @@ Content-Type: application/json
     "year": 954,
     "edition": 2
 }
+
+
+###Patch
+PATCH http://localhost:3000/api/books/662dc8a41e49a1122a623614
+Content-Type: application/json
+
+{
+    "title": "The Lord of the Rings: Return of the King",
+    "author": "J.R.R. Tolkien",
+    "year": 954,
+    "edition": 2
+}
+###BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+
+###Delete
+DELETE http://localhost:3000/api/books/662dc8a41e49a1122a623614
+
+
+###Post
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "sajan",
+    "email": "sajan1@gmail.com",
+    "password": "Sajan@123"
+}
+
+###Post
+POST http://localhost:3000/api/auth/login
+
+Content-Type: application/json
+
+{
+    "email": "m",
+    "password": "Sajan@123"
+}
+
+###update
+PUT  http://localhost:3000/api/auth/update
+Content-Type: application/json
+
+{
+    "username": "sajan",
+    "email": "sajan@gmail.com",
+    "password": "Sajan@1234",
+    "role": "admin"
+
+}

@@ -1,8 +1,8 @@
 const Joi = require("joi");
 
 const validate = (schema) => (req, res, next) => {
-    const object = ['body'].reduce((obj, key) => {
-        if (obj && Object.prototype.hasOwnProperty.call(req,key)){
+    const object = Object.keys(schema).reduce((obj, key) => {
+        if (obj && Object.prototype.hasOwnProperty.call(req,key) ){
             obj[key]=req[key];
         
         }

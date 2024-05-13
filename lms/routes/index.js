@@ -1,5 +1,6 @@
 const express = require('express');
 const bookRouter = require('./book.route');
+const authRouter = require('./auth.route');
 
 const router = express.Router();
 
@@ -9,6 +10,10 @@ const routes =[
         route : bookRouter,
 
     },
+    {
+        endpoint: '/auth',
+        route : authRouter,
+    }
 ];
 
 routes.forEach((route) => {

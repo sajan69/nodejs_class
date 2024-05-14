@@ -26,7 +26,8 @@ const login = async(req,res) => {
         }
         const token = generateAuthToken(user);
         const userJson = user.toJSON();
-        res.status(httpStatus.OK).send(userJson);
+        console.log(token);
+        res.status(httpStatus.OK).send({userJson,token});
     }
     catch(error){
         res.status(httpStatus.INTERNAL_SERVER_ERROR).send(error.message);

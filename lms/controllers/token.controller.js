@@ -26,7 +26,12 @@ const generateAuthToken = (user) => {
     }
 }
 
+const verifyToken = (token, secret) => {
+    return jwt.verify(token, secret);
+}
+
 module.exports = {
     createToken,
     generateAuthToken,
+    verifyToken,
 }

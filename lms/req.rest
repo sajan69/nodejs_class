@@ -1,4 +1,5 @@
 GET http://localhost:3000/api/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjQxODYxZmZmY2M0NjY0MWIyNjFkYjMiLCJpYXQiOjE3MTU2NTcyOTAsImV4cGlyZXMiOiIyMDI0LTA1LTE0VDAzOjI5OjEwLjc0MVoiLCJ0eXBlIjoiYWNjZXNzIn0.ShhsRbflRp8tRWyXuCT_tBHvv9HLTciB4aBaXRoodZ4
 
 ###
 
